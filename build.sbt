@@ -4,7 +4,7 @@ lazy val root = (project in file(".")).
       organization := "com.dallaway",
       scalaVersion := "2.12.6",
     )),
-    name := "basic",
+    name := "pgtxtx",
     scalacOptions ++= lightbendScalacOptions,
     libraryDependencies ++= cats ++ fs2 ++ scalatest ++ scalacheck ++ csv
   )
