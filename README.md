@@ -15,6 +15,18 @@ Run with:
 sbt> run file.csv
 ```
 
+From Postgres you could perhaps create such a CSV file with:
+
+```sql
+\copy (
+   select
+     school || '_' ||  key as "filename", 
+     value as "text"
+  from 
+     school_config order by school
+  ) to '/tmp/all-settings.csv' csv header;
+```
+
 
 
 
