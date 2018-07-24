@@ -20,7 +20,10 @@ object Main {
     }
 
   def expand(text: String): String =
-    text.drop(1).replaceAll("\\\\n", "\n").replaceAll("\\\\\"","\"").init
+    text.length > 1 match {
+      case false => text
+      case true => text.drop(1).replaceAll("\\\\n", "\n").replaceAll("\\\\\"","\"").init
+  }
 
   def read(filename: String): List[Either[Error,Row]] = {
     import java.io.File
